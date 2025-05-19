@@ -1,0 +1,5 @@
+{
+  "QueryString": "CREATE EXTERNAL TABLE IF NOT EXISTS default.stock_summary(`Trade_Date` string,`Ticker` string,`Close` string) ROW FORMAT SERDE   'org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe' STORED AS INPUTFORMAT   'org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat' OUTPUTFORMAT   'org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat' LOCATION  's3://databucket-us-west-2-579890207/output/' TBLPROPERTIES ('classification'='parquet', 'compressionType'='none', 'typeOfData'='file')",
+  "WorkGroup": "primary",
+  "ResultConfiguration": {
+    "OutputLocation": "s3://databucket-us-west-2-579890207/results/"

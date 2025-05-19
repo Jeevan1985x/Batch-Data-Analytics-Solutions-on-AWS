@@ -1,0 +1,17 @@
+
+  "ClusterId.$": "$.cluster.ClusterId",
+  "Step": {
+    "Name": "pyspark-job",
+    "HadoopJarStep": {
+      "Jar": "command-runner.jar",
+      "Args": [
+        "spark-submit",
+        "--deploy-mode",
+        "cluster",
+        "--executor-memory",
+        "1g",
+        "s3://databucket-us-west-2-579890207/scripts/script.py"
+      ]
+    }
+  }
+}
