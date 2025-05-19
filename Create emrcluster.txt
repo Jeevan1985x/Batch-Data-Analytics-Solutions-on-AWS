@@ -1,0 +1,45 @@
+{
+  "Name": "labCluster",
+  "VisibleToAllUsers": true,
+  "ReleaseLabel": "emr-6.3.0",
+  "Applications": [
+    {
+      "Name": "Spark"
+    },
+    {
+      "Name": "Flink"
+    },
+    {
+      "Name": "Livy"
+    }
+  ],
+  "ServiceRole": "LabStack-502883f7-b4ce-49fe-bc70-c4f-EMRDefaultRole-LwBhg1J19elm",
+  "JobFlowRole": "LabStack-502883f7-b4ce-49fe-bc70-c4f0be03c9e9-hREJYRvDxaRmcd9EMwHu96-0-EMREC2InstanceProfile-alZB23j8fJce",
+  "LogUri": "s3://databucket-us-west-2-579890207/logs/",
+  "Instances": {
+    "Ec2SubnetId": "subnet-08730102d3fb60b66",
+    "KeepJobFlowAliveWhenNoSteps": true,
+    "InstanceFleets": [
+      {
+        "Name": "LeaderFleet",
+        "InstanceFleetType": "MASTER",
+        "TargetOnDemandCapacity": 1,
+        "InstanceTypeConfigs": [
+          {
+            "InstanceType": "m4.large"
+          }
+        ]
+      },
+      {
+        "Name": "MyCoreFleet",
+        "InstanceFleetType": "CORE",
+        "TargetOnDemandCapacity": 2,
+        "InstanceTypeConfigs": [
+          {
+            "InstanceType": "m4.large"
+          }
+        ]
+      }
+    ]
+  }
+}
